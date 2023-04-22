@@ -40,6 +40,7 @@ def generate_csv(img_dir, output_csv):
             
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img-dir', character_type=str, dest='img_dir', help='')   
+    parser.add_argument('--img-dir', type=str, dest='img_dir', help='')
+    parser.add_argument('--output-file', type=str, dest='output_file', help='')
     args = parser.parse_args() 
-    generate_csv(args.img_dir)
+    generate_csv(args.img_dir, args.output_file)
