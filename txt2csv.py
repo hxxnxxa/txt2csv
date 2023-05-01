@@ -33,7 +33,7 @@ def generate_csv(img_dir, output_csv):
 
         contents = {'Index': i, 'Fontname': font_name, 'Type': character_type, 'Unicode': character_unicode, 'Character': chr(int(character_unicode, 16)), 'len(contours)': len(contours)}
         
-        with open(output_file,'a') as f_object:
+        with open(output_file, newline='', mode='a') as f_object:
             dictwriter_object = DictWriter(f_object, fieldnames=field_names)
             dictwriter_object.writerow(contents)
             f_object.close()
